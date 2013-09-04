@@ -3,6 +3,11 @@ using System.Collections.Generic;
 
 namespace Sandbox
 {
+	public interface IPagedReader<T>
+	{
+		List<T> Get(int skip, int take);
+	}
+
 	public class PagedEnumerable<T> : IEnumerable<T>
 	{
 		public class PagedEnumerator : IEnumerator<T>
